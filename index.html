@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="ur" dir="rtl">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>اسلامی ڈیجیٹل مکتبہ</title>
+<style>
+*{box-sizing:border-box}
+body{
+margin:0;
+font-family:"Noto Nastaliq Urdu",serif;
+background:#f5f4ed;
+color:#193b32;
+}
+header{
+background:#103d32;
+color:white;
+text-align:center;
+padding:25px 12px;
+}
+header h1{font-size:30px;margin:5px}
+header p{color:#e5d39a;margin:8px}
+nav{
+background:#d5b66a;
+padding:13px 5px;
+text-align:center;
+}
+nav a{
+color:#173b30;
+text-decoration:none;
+margin:8px;
+font-weight:bold;
+}
+.hero{
+background:linear-gradient(135deg,#103d32,#1c6550);
+color:white;
+text-align:center;
+padding:45px 15px;
+}
+.hero h2{font-size:27px}
+.hero p{line-height:2}
+.search{
+width:90%;
+max-width:500px;
+padding:15px;
+border:2px solid #d5b66a;
+border-radius:10px;
+font-size:16px;
+}
+.container{padding:25px 15px}
+.heading{
+text-align:center;
+color:#9b762c;
+font-size:25px;
+margin-bottom:25px;
+}
+.grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
+gap:15px;
+}
+.card{
+background:white;
+padding:22px 10px;
+text-align:center;
+border-radius:12px;
+border-bottom:4px solid #c8a653;
+box-shadow:0 3px 12px #00000010;
+}
+.card .symbol{font-size:30px}
+.card h3{font-size:18px}
+.card p{font-size:13px;line-height:1.8}
+.card a{
+display:inline-block;
+background:#164b3b;
+color:white;
+padding:8px 16px;
+border-radius:7px;
+text-decoration:none;
+}
+.notice{
+background:#fff8e5;
+padding:20px;
+border-radius:12px;
+text-align:center;
+line-height:2;
+margin-top:25px;
+}
+footer{
+background:#103d32;
+color:white;
+text-align:center;
+padding:25px 10px;
+line-height:2;
+}
+</style>
+</head>
+<body>
+
+<header>
+<h1>📚 اسلامی ڈیجیٹل مکتبہ</h1>
+<p>علم، تحقیق اور رہنمائی کا مستند مرکز</p>
+</header>
+
+<nav>
+<a href="#home">ہوم</a>
+<a href="#library">مکتبہ</a>
+<a href="#about">تعارف</a>
+</nav>
+
+<section class="hero" id="home">
+<h2>بسم اللہ الرحمن الرحیم</h2>
+<p>قرآن و سنت کی روشنی میں علم حاصل کریں<br>
+مستند اسلامی علوم ایک جگہ</p>
+<input class="search" id="search"
+placeholder="اپنی مطلوبہ کتاب یا موضوع تلاش کریں..."
+oninput="searchBooks()">
+</section>
+
+<section class="container" id="library">
+<h2 class="heading">📖 علمی و دینی ذخیرہ</h2>
+
+<div class="grid" id="books">
+
+<div class="card">
+<div class="symbol">📗</div>
+<h3>قرآن کریم</h3>
+<p>قرآن مجید اور ترجمہ و تفسیر</p>
+<a href="#about">مطالعہ</a>
+</div>
+
+<div class="card">
+<div class="symbol">🌙</div>
+<h3>احادیث مبارکہ</h3>
+<p>احادیث نبویہ اور ان کی تعلیمات</p>
+<a href="#about">مطالعہ</a>
+</div>
+
+<div class="card">
+<div class="symbol">📚</div>
+<h3>تفاسیر قرآن</h3>
+<p>قرآن کریم کی مستند تفاسیر</p>
+<a href="#about">مطالعہ</a>
+</div>
+
+<div class="card">
+<div class="symbol">⚖️</div>
+<h3>فقہ و مسائل</h3>
+<p>شرعی مسائل اور فقہی رہنمائی</p>
+<a href="#about">مطالعہ</a>
+</div>
+
+<div class="card">
+<div class="symbol">📘</div>
+<h3>اسلامی کتب</h3>
+<p>دینی و اصلاحی کتابوں کا ذخیرہ</p>
+<a href="#about">مطالعہ</a>
+</div>
+
+<div class="card">
+<div class="symbol">🎓</div>
+<h3>علمی دروس</h3>
+<p>علماء کے دروس اور بیانات</p>
+<a href="#about">مطالعہ</a>
+</div>
+
+</div>
+
+<div class="notice">
+<h3>خوش آمدید!</h3>
+<p>اسلامی ڈیجیٹل مکتبہ کا مقصد قرآن و سنت
+اور مستند اسلامی علوم کو عام کرنا ہے۔</p>
+</div>
+</section>
+
+<section class="container" id="about">
+<h2 class="heading">ہمارا مقصد</h2>
+<p style="text-align:center;line-height:2.5">
+اسلامی علوم کی ترویج، دینی کتب تک آسان رسائی
+اور مستند علمی مواد کی فراہمی۔
+</p>
+</section>
+
+<footer>
+<strong>اسلامی ڈیجیٹل مکتبہ</strong>
+<p>قرآن و سنت کی روشنی میں علم و اصلاح</p>
+<p>تمام حقوق محفوظ ہیں © 2026</p>
+</footer>
+
+<script>
+function searchBooks(){
+let value=document.getElementById("search").value;
+let cards=document.querySelectorAll(".card");
+cards.forEach(card=>{
+card.style.display=
+card.innerText.includes(value)?"block":"none";
+});
+}
+</script>
+
+</body>
+</html>
