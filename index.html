@@ -1,202 +1,447 @@
 <!DOCTYPE html>
 <html lang="ur" dir="rtl">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>اسلامی ڈیجیٹل مکتبہ</title>
-<style>
-*{box-sizing:border-box}
-body{
-margin:0;
-font-family:"Noto Nastaliq Urdu",serif;
-background:#f5f4ed;
-color:#193b32;
-}
-header{
-background:#103d32;
-color:white;
-text-align:center;
-padding:25px 12px;
-}
-header h1{font-size:30px;margin:5px}
-header p{color:#e5d39a;margin:8px}
-nav{
-background:#d5b66a;
-padding:13px 5px;
-text-align:center;
-}
-nav a{
-color:#173b30;
-text-decoration:none;
-margin:8px;
-font-weight:bold;
-}
-.hero{
-background:linear-gradient(135deg,#103d32,#1c6550);
-color:white;
-text-align:center;
-padding:45px 15px;
-}
-.hero h2{font-size:27px}
-.hero p{line-height:2}
-.search{
-width:90%;
-max-width:500px;
-padding:15px;
-border:2px solid #d5b66a;
-border-radius:10px;
-font-size:16px;
-}
-.container{padding:25px 15px}
-.heading{
-text-align:center;
-color:#9b762c;
-font-size:25px;
-margin-bottom:25px;
-}
-.grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(140px,1fr));
-gap:15px;
-}
-.card{
-background:white;
-padding:22px 10px;
-text-align:center;
-border-radius:12px;
-border-bottom:4px solid #c8a653;
-box-shadow:0 3px 12px #00000010;
-}
-.card .symbol{font-size:30px}
-.card h3{font-size:18px}
-.card p{font-size:13px;line-height:1.8}
-.card a{
-display:inline-block;
-background:#164b3b;
-color:white;
-padding:8px 16px;
-border-radius:7px;
-text-decoration:none;
-}
-.notice{
-background:#fff8e5;
-padding:20px;
-border-radius:12px;
-text-align:center;
-line-height:2;
-margin-top:25px;
-}
-footer{
-background:#103d32;
-color:white;
-text-align:center;
-padding:25px 10px;
-line-height:2;
-}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#073f35">
+  <meta name="description" content="اسلامی ڈیجیٹل مکتبہ — قرآن و سنت کی روشنی میں علم، تحقیق اور مطالعے کا مرکز">
+  <title>اسلامی ڈیجیٹل مکتبہ | علم و تحقیق کا مرکز</title>
+
+  <!-- جمیل نوری نستعلیق کی فونٹ فائل بعد میں assets/fonts میں رکھ کر فعال کی جا سکتی ہے۔ -->
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Noto+Nastaliq+Urdu:wght@400;500;600;700&display=swap');
+
+    @font-face {
+      font-family: "Jameel Noori Nastaleeq";
+      src: url("assets/fonts/JameelNooriNastaleeq.woff2") format("woff2");
+      font-weight: 100 900;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --green: #073f35;
+      --green-2: #0d5948;
+      --green-3: #174f43;
+      --gold: #c9a45a;
+      --gold-light: #ead7a5;
+      --cream: #f7f4e9;
+      --paper: #fffdf7;
+      --ink: #173c33;
+      --muted: #687b70;
+      --line: rgba(201,164,90,.32);
+      --shadow: 0 12px 32px rgba(14,48,39,.09);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      color: var(--ink);
+      background: var(--cream);
+      font-family: "Jameel Noori Nastaleeq", "Noto Nastaliq Urdu", serif;
+      line-height: 2;
+    }
+    a { color: inherit; }
+    button, input { font: inherit; }
+
+    .topline {
+      height: 5px;
+      background: linear-gradient(90deg, #8d6b2d, #f0d99d, #b38a42, #f0d99d, #8d6b2d);
+    }
+    .site-header {
+      color: #fff;
+      background:
+        radial-gradient(circle at 50% 0%, rgba(226,194,123,.13), transparent 42%),
+        linear-gradient(135deg, #062f29, var(--green) 58%, #0c4b3e);
+      border-bottom: 3px solid var(--gold);
+    }
+    .header-inner {
+      width: min(1160px, 92%);
+      margin: auto;
+      padding: 23px 0 19px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 13px; }
+    .brand-mark {
+      width: 58px; height: 58px;
+      display: grid; place-items: center;
+      border: 1px solid rgba(234,215,165,.65);
+      border-radius: 18px 18px 7px 7px;
+      color: var(--gold-light);
+      font-size: 31px;
+      background: rgba(255,255,255,.055);
+      box-shadow: inset 0 0 18px rgba(234,215,165,.08);
+    }
+    .brand h1 { margin: 0; font-size: clamp(22px, 4vw, 32px); line-height: 1.7; color: #fff8e8; }
+    .brand p { margin: 0; color: #e5d5ad; font-size: 13px; }
+    .header-note { color: #ead9b2; font-size: 14px; text-align: left; }
+
+    .nav-wrap { background: #e1c47e; }
+    nav {
+      width: min(1160px, 92%);
+      margin: auto;
+      min-height: 52px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: clamp(16px, 4vw, 42px);
+      flex-wrap: wrap;
+      padding: 7px 0;
+    }
+    nav a {
+      text-decoration: none;
+      color: #173d32;
+      font-weight: 700;
+      font-size: 15px;
+      transition: color .2s ease;
+    }
+    nav a:hover { color: #805c1d; }
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      color: white;
+      text-align: center;
+      padding: 48px 16px 43px;
+      background:
+        radial-gradient(ellipse at 50% 0%, rgba(221,190,119,.16), transparent 50%),
+        linear-gradient(145deg, #0b493d, #07382f 68%, #0c5142);
+    }
+    .hero::before, .hero::after {
+      content: "۞";
+      position: absolute;
+      color: rgba(229,205,151,.13);
+      font-size: 130px;
+      top: 10px;
+      pointer-events: none;
+    }
+    .hero::before { right: 4%; }
+    .hero::after { left: 4%; }
+    .hero-content { position: relative; z-index: 1; width: min(780px, 100%); margin: auto; }
+    .bismillah { color: var(--gold-light); font-family: "Amiri", serif; font-size: 25px; margin: 0 0 8px; }
+    .hero h2 { font-size: clamp(24px, 5vw, 38px); margin: 0 0 9px; color: #fff9e9; }
+    .hero p { color: #e4e8dc; margin: 0 auto 21px; font-size: 16px; }
+    .search-box {
+      display: flex;
+      width: min(650px, 100%);
+      margin: 0 auto;
+      padding: 5px;
+      border: 2px solid var(--gold);
+      border-radius: 13px;
+      background: #fffdf7;
+      box-shadow: 0 8px 25px rgba(0,0,0,.16);
+    }
+    .search-box input {
+      min-width: 0;
+      flex: 1;
+      border: 0;
+      outline: 0;
+      padding: 8px 14px;
+      color: #183d33;
+      background: transparent;
+      font-size: 15px;
+    }
+    .search-box button {
+      border: 0;
+      border-radius: 9px;
+      background: var(--green);
+      color: #fff;
+      padding: 7px 20px;
+      cursor: pointer;
+    }
+
+    .stats {
+      width: min(1000px, 92%);
+      margin: -1px auto 0;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      transform: translateY(-1px);
+    }
+    .stat {
+      text-align: center;
+      padding: 12px;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-radius: 0 0 13px 13px;
+      box-shadow: var(--shadow);
+    }
+    .stat strong { display: block; color: var(--green); font-size: 25px; line-height: 1.6; }
+    .stat span { color: var(--muted); font-size: 13px; }
+
+    .section {
+      width: min(1160px, 92%);
+      margin: auto;
+      padding: 37px 0 10px;
+    }
+    .section-heading { text-align: center; margin-bottom: 24px; }
+    .section-heading .eyebrow { color: #987331; font-size: 13px; margin: 0; }
+    .section-heading h2 { margin: 0; color: var(--green); font-size: clamp(23px, 4vw, 30px); }
+    .section-heading .ornament { color: var(--gold); letter-spacing: 7px; line-height: 1; }
+
+    .category-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 15px;
+    }
+    .category-card {
+      min-height: 180px;
+      padding: 19px 13px 16px;
+      text-align: center;
+      text-decoration: none;
+      background: var(--paper);
+      border: 1px solid var(--line);
+      border-bottom: 4px solid var(--gold);
+      border-radius: 15px;
+      box-shadow: 0 5px 17px rgba(24,57,45,.055);
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+    .category-card:hover { transform: translateY(-4px); box-shadow: var(--shadow); }
+    .category-icon {
+      width: 51px; height: 51px;
+      display: grid; place-items: center;
+      margin: 0 auto 8px;
+      border-radius: 16px;
+      background: #edf2e9;
+      color: var(--green);
+      font-size: 27px;
+    }
+    .category-card h3 { margin: 2px 0 5px; font-size: 17px; color: var(--green); }
+    .category-card p { margin: 0; color: var(--muted); font-size: 12px; line-height: 1.9; }
+
+    .welcome-panel {
+      margin: 34px 0 8px;
+      padding: 24px 20px;
+      text-align: center;
+      color: #fff8e8;
+      border: 1px solid rgba(234,215,165,.6);
+      border-radius: 16px;
+      background:
+        radial-gradient(circle at 50% 0, rgba(229,197,126,.17), transparent 60%),
+        linear-gradient(130deg, #07372f, #145746);
+      box-shadow: var(--shadow);
+    }
+    .welcome-panel h2 { margin: 0 0 6px; color: var(--gold-light); font-size: 23px; }
+    .welcome-panel p { max-width: 700px; margin: auto; color: #f0eadb; font-size: 15px; }
+
+    .feature-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 12px;
+      margin: 23px 0 38px;
+    }
+    .feature {
+      background: #fffdf7;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 14px 10px;
+      text-align: center;
+    }
+    .feature b { display: block; color: var(--green); font-size: 16px; }
+    .feature span { color: var(--muted); font-size: 12px; }
+
+    footer {
+      margin-top: 20px;
+      padding: 27px 15px 18px;
+      text-align: center;
+      color: #f8f1df;
+      background: #062f29;
+      border-top: 3px solid var(--gold);
+    }
+    footer strong { color: var(--gold-light); font-size: 20px; }
+    footer p { margin: 5px 0; font-size: 13px; color: #d9dfd4; }
+    .footer-small { opacity: .75; font-size: 11px; }
+
+    .empty-state {
+      display: none;
+      padding: 20px;
+      text-align: center;
+      color: var(--muted);
+      background: #fffdf7;
+      border: 1px dashed var(--gold);
+      border-radius: 12px;
+      margin-top: 15px;
+    }
+
+    @media (max-width: 800px) {
+      .category-grid { grid-template-columns: repeat(3, minmax(0,1fr)); gap: 12px; }
+      .category-card { min-height: 170px; }
+      .header-note { display: none; }
+    }
+    @media (max-width: 560px) {
+      .header-inner { width: 92%; padding: 17px 0 14px; }
+      .brand-mark { width: 47px; height: 47px; font-size: 25px; }
+      .brand p { font-size: 11px; }
+      nav { gap: 18px; }
+      nav a { font-size: 13px; }
+      .hero { padding: 35px 13px 32px; }
+      .hero p { font-size: 14px; }
+      .search-box input { font-size: 12px; padding-inline: 8px; }
+      .search-box button { padding-inline: 13px; font-size: 13px; }
+      .stats { gap: 8px; }
+      .stat { padding: 9px 5px; }
+      .stat strong { font-size: 21px; }
+      .stat span { font-size: 11px; }
+      .section { padding-top: 29px; }
+      .category-grid { grid-template-columns: repeat(2, minmax(0,1fr)); gap: 11px; }
+      .category-card { min-height: 162px; padding: 15px 8px 12px; }
+      .category-card h3 { font-size: 15px; }
+      .category-card p { font-size: 11px; }
+      .category-icon { width: 45px; height: 45px; font-size: 24px; }
+      .feature-strip { grid-template-columns: 1fr; gap: 9px; }
+    }
+  </style>
 </head>
 <body>
+  <div class="topline"></div>
 
-<header>
-<h1>📚 اسلامی ڈیجیٹل مکتبہ</h1>
-<p>علم، تحقیق اور رہنمائی کا مستند مرکز</p>
-</header>
+  <header class="site-header">
+    <div class="header-inner">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">۞</div>
+        <div>
+          <h1>اسلامی ڈیجیٹل مکتبہ</h1>
+          <p>علم، تحقیق اور رہنمائی کا مستند مرکز</p>
+        </div>
+      </div>
+      <div class="header-note">قرآن و سنت کی روشنی میں<br>علم، اصلاح اور دعوت</div>
+    </div>
+  </header>
 
-<nav>
-<a href="#home">ہوم</a>
-<a href="#library">مکتبہ</a>
-<a href="#about">تعارف</a>
-</nav>
+  <div class="nav-wrap">
+    <nav aria-label="مرکزی نیویگیشن">
+      <a href="#home">ہوم</a>
+      <a href="#library">علمی شعبے</a>
+      <a href="#features">مطالعہ سہولتیں</a>
+      <a href="#about">تعارف</a>
+    </nav>
+  </div>
 
-<section class="hero" id="home">
-<h2>بسم اللہ الرحمن الرحیم</h2>
-<p>قرآن و سنت کی روشنی میں علم حاصل کریں<br>
-مستند اسلامی علوم ایک جگہ</p>
-<input class="search" id="search"
-placeholder="اپنی مطلوبہ کتاب یا موضوع تلاش کریں..."
-oninput="searchBooks()">
-</section>
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="bismillah" lang="ar" dir="rtl">بِسْمِ اللّٰهِ الرَّحْمٰنِ الرَّحِيْمِ</p>
+        <h2>علم و تحقیق کا ایک جامع مرکز</h2>
+        <p>قرآن و سنت اور مستند اسلامی علوم کا علمی ذخیرہ<br>مطالعہ، تحقیق اور استفادے کے لیے ایک جگہ</p>
+        <form class="search-box" onsubmit="event.preventDefault(); searchCategories();">
+          <input id="searchInput" type="search" placeholder="کتاب، موضوع یا علمی شعبہ تلاش کریں..." aria-label="تلاش">
+          <button type="submit">تلاش کریں</button>
+        </form>
+      </div>
+    </section>
 
-<section class="container" id="library">
-<h2 class="heading">📖 علمی و دینی ذخیرہ</h2>
+    <section class="stats" aria-label="مکتبہ کا تعارف">
+      <div class="stat"><strong>16</strong><span>مستقل علمی شعبے</span></div>
+      <div class="stat"><strong>اردو و عربی</strong><span>دو بنیادی زبانیں</span></div>
+    </section>
 
-<div class="grid" id="books">
+    <section class="section" id="library">
+      <div class="section-heading">
+        <p class="eyebrow">علمی و دینی ذخیرہ</p>
+        <h2>مکتبہ کے علمی شعبے</h2>
+        <div class="ornament">ـــــــــ ۞ ـــــــــ</div>
+      </div>
 
-<div class="card">
-<div class="symbol">📗</div>
-<h3>قرآن کریم</h3>
-<p>قرآن مجید اور ترجمہ و تفسیر</p>
-<a href="#about">مطالعہ</a>
-</div>
+      <div class="category-grid" id="categoryGrid">
+        <a class="category-card" href="#books" data-search="قرآن کریم علوم القرآن قرآن تجوید">
+          <div class="category-icon">۞</div><h3>قرآن کریم و علوم القرآن</h3><p>قرآن کریم، علوم القرآن اور متعلقہ مباحث</p>
+        </a>
+        <a class="category-card" href="#books" data-search="حدیث علوم الحدیث احادیث مبارکہ">
+          <div class="category-icon">☾</div><h3>حدیث و علوم الحدیث</h3><p>احادیث نبویہ، اصول اور شروح</p>
+        </a>
+        <a class="category-card" href="#books" data-search="فقہ فتاوی مسائل">
+          <div class="category-icon">⚖</div><h3>فقہ و فتاویٰ</h3><p>فقہی ذخیرہ، شرعی مسائل اور فتاویٰ</p>
+        </a>
+        <a class="category-card" href="#books" data-search="عقائد علم کلام">
+          <div class="category-icon">◇</div><h3>عقائد و علم کلام</h3><p>اسلامی عقائد اور علمی مباحث</p>
+        </a>
+        <a class="category-card" href="#books" data-search="سیرت النبی سیرت رسول">
+          <div class="category-icon">ﷺ</div><h3>سیرت النبی ﷺ</h3><p>حیاتِ طیبہ اور اسوۂ حسنہ</p>
+        </a>
+        <a class="category-card" href="#books" data-search="سیرت صحابہ تاریخ اسلام">
+          <div class="category-icon">☪</div><h3>سیرت صحابہ و تاریخ اسلام</h3><p>صحابہ کرام اور اسلامی تاریخ</p>
+        </a>
+        <a class="category-card" href="#books" data-search="تصوف تزکیہ اصلاح">
+          <div class="category-icon">♡</div><h3>تصوف، تزکیہ و اصلاح</h3><p>اخلاق، تربیت اور اصلاحِ باطن</p>
+        </a>
+        <a class="category-card" href="#books" data-search="درس نظامی نصابی کتب">
+          <div class="category-icon">📚</div><h3>درس نظامی و نصابی کتب</h3><p>مدارس کے نصاب اور درسی کتابیں</p>
+        </a>
+        <a class="category-card" href="#books" data-search="علوم عربیہ ادبیات لغت">
+          <div class="category-icon">ع</div><h3>علوم عربیہ و ادبیات</h3><p>لغت، زبان اور معاون عربی علوم</p>
+        </a>
+        <a class="category-card" href="#books" data-search="نحو صرف بلاغت ادب عربی">
+          <div class="category-icon">✒</div><h3>عربی علوم</h3><p>نحو، صرف، بلاغت اور ادب</p>
+        </a>
+        <a class="category-card" href="#books" data-search="اصول تفسیر اصول فقہ منطق">
+          <div class="category-icon">⌘</div><h3>اصول و علوم</h3><p>اصولِ تفسیر، اصولِ فقہ اور منطق</p>
+        </a>
+        <a class="category-card" href="#books" data-search="دعوت تبلیغ خطبات اصلاح معاشرہ">
+          <div class="category-icon">◉</div><h3>دعوت و تبلیغ</h3><p>دعوت، خطبات اور اصلاحِ معاشرہ</p>
+        </a>
+        <a class="category-card" href="#books" data-search="اسلامی خواتین تعلیم تربیت گھریلو زندگی">
+          <div class="category-icon">❀</div><h3>اسلامی خواتین</h3><p>تعلیم، تربیت اور گھریلو زندگی</p>
+        </a>
+        <a class="category-card" href="#books" data-search="بچوں کا مکتبہ کہانیاں تربیت">
+          <div class="category-icon">☼</div><h3>بچوں کا مکتبہ</h3><p>اسلامی کہانیاں اور بنیادی دینی تعلیم</p>
+        </a>
+        <a class="category-card" href="#books" data-search="آڈیو ویڈیو بیانات دروس">
+          <div class="category-icon">▶</div><h3>آڈیو و ویڈیو</h3><p>بیانات، دروس اور تعلیمی اسباق</p>
+        </a>
+        <a class="category-card" href="#books" data-search="مخطوطات نایاب کتب قدیم نسخے">
+          <div class="category-icon">▤</div><h3>مخطوطات و نایاب کتب</h3><p>قدیم نسخے، رسائل اور تحقیقی ذخیرہ</p>
+        </a>
+      </div>
+      <div class="empty-state" id="emptyState">آپ کی تلاش سے متعلق کوئی شعبہ نہیں ملا۔ دوسرے الفاظ سے تلاش فرمائیں۔</div>
 
-<div class="card">
-<div class="symbol">🌙</div>
-<h3>احادیث مبارکہ</h3>
-<p>احادیث نبویہ اور ان کی تعلیمات</p>
-<a href="#about">مطالعہ</a>
-</div>
+      <div class="welcome-panel" id="about">
+        <h2>خوش آمدید!</h2>
+        <p>اسلامی ڈیجیٹل مکتبہ کا مقصد قرآن و سنت اور مستند اسلامی علوم کو منظم انداز میں اہلِ علم اور عام قارئین تک پہنچانا ہے۔ ہمارا ہدف ایک ایسا علمی ذخیرہ قائم کرنا ہے جہاں مطالعہ آسان، تلاش سہل اور استفادہ عام ہو۔</p>
+      </div>
+    </section>
 
-<div class="card">
-<div class="symbol">📚</div>
-<h3>تفاسیر قرآن</h3>
-<p>قرآن کریم کی مستند تفاسیر</p>
-<a href="#about">مطالعہ</a>
-</div>
+    <section class="section" id="features">
+      <div class="section-heading">
+        <p class="eyebrow">آسان اور منظم مطالعہ</p>
+        <h2>مکتبہ کی مجوزہ سہولتیں</h2>
+        <div class="ornament">ـــــــــ ۞ ـــــــــ</div>
+      </div>
+      <div class="feature-strip">
+        <div class="feature"><b>♡ پسندیدہ کتب</b><span>اپنی پسند کی کتابیں الگ محفوظ کریں</span></div>
+        <div class="feature"><b>▣ صفحہ نمبر سے مطالعہ</b><span>مطلوبہ صفحے تک براہِ راست رسائی</span></div>
+        <div class="feature"><b>◷ مطالعے کا تسلسل</b><span>آخری پڑھے گئے صفحے سے دوبارہ آغاز</span></div>
+      </div>
+    </section>
+  </main>
 
-<div class="card">
-<div class="symbol">⚖️</div>
-<h3>فقہ و مسائل</h3>
-<p>شرعی مسائل اور فقہی رہنمائی</p>
-<a href="#about">مطالعہ</a>
-</div>
+  <footer>
+    <strong>اسلامی ڈیجیٹل مکتبہ</strong>
+    <p>قرآن و سنت کی روشنی میں علم، اصلاح اور دعوت</p>
+    <p class="footer-small">تمام حقوق محفوظ ہیں © <span id="year"></span></p>
+  </footer>
 
-<div class="card">
-<div class="symbol">📘</div>
-<h3>اسلامی کتب</h3>
-<p>دینی و اصلاحی کتابوں کا ذخیرہ</p>
-<a href="#about">مطالعہ</a>
-</div>
+  <script>
+    function searchCategories() {
+      const query = document.getElementById("searchInput").value.trim().toLocaleLowerCase("ur");
+      const cards = document.querySelectorAll(".category-card");
+      let visible = 0;
 
-<div class="card">
-<div class="symbol">🎓</div>
-<h3>علمی دروس</h3>
-<p>علماء کے دروس اور بیانات</p>
-<a href="#about">مطالعہ</a>
-</div>
+      cards.forEach(card => {
+        const searchableText = (card.innerText + " " + (card.dataset.search || "")).toLocaleLowerCase("ur");
+        const matches = !query || searchableText.includes(query);
+        card.style.display = matches ? "" : "none";
+        if (matches) visible++;
+      });
 
-</div>
+      document.getElementById("emptyState").style.display = visible ? "none" : "block";
+    }
 
-<div class="notice">
-<h3>خوش آمدید!</h3>
-<p>اسلامی ڈیجیٹل مکتبہ کا مقصد قرآن و سنت
-اور مستند اسلامی علوم کو عام کرنا ہے۔</p>
-</div>
-</section>
-
-<section class="container" id="about">
-<h2 class="heading">ہمارا مقصد</h2>
-<p style="text-align:center;line-height:2.5">
-اسلامی علوم کی ترویج، دینی کتب تک آسان رسائی
-اور مستند علمی مواد کی فراہمی۔
-</p>
-</section>
-
-<footer>
-<strong>اسلامی ڈیجیٹل مکتبہ</strong>
-<p>قرآن و سنت کی روشنی میں علم و اصلاح</p>
-<p>تمام حقوق محفوظ ہیں © 2026</p>
-</footer>
-
-<script>
-function searchBooks(){
-let value=document.getElementById("search").value;
-let cards=document.querySelectorAll(".card");
-cards.forEach(card=>{
-card.style.display=
-card.innerText.includes(value)?"block":"none";
-});
-}
-</script>
-
+    document.getElementById("searchInput").addEventListener("input", searchCategories);
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
 </body>
 </html>
