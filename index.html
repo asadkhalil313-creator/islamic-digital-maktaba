@@ -13,8 +13,8 @@
 
     @font-face {
       font-family: "Jameel Noori Nastaleeq";
-      src: url("assets/fonts/JameelNooriNastaleeq.woff2") format("woff2");
-      font-weight: 100 900;
+      src: url("https://cdn.jsdelivr.net/gh/tariq-abdullah/urdu-web-font-CDN/JameelNooriNastaleeq.woff") format("woff");
+      font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
@@ -162,7 +162,8 @@
     .showcase-copy h2{color:#fff4d7;font-size:clamp(22px,4vw,30px);line-height:1.7;margin:5px 0}
     .showcase-copy p{color:#e5e9df;margin:0 0 14px;font-size:14px}
     .showcase-copy a{display:inline-block;padding:5px 18px;border-radius:30px;background:linear-gradient(110deg,#ead7a5,#c9a45a);color:#173c33;text-decoration:none;font-weight:700}
-    .bookshelf-scene{position:relative;min-height:205px;padding:25px 18px 16px;border:7px solid #9a6c32;border-bottom-width:12px;border-radius:12px;background:linear-gradient(90deg,rgba(27,12,5,.2),transparent 18%,rgba(27,12,5,.18) 82%),#3b2113;box-shadow:inset 0 0 24px #160d08,0 7px 14px rgba(0,0,0,.25)}
+    .bookshelf-scene{position:relative;min-height:235px;padding:31px 18px 16px;border:9px solid #9a6c32;border-bottom-width:15px;border-radius:12px;background:linear-gradient(90deg,rgba(27,12,5,.25),transparent 18%,rgba(27,12,5,.2) 82%),repeating-linear-gradient(90deg,#3b2113 0 28px,#422717 29px 31px);box-shadow:inset 0 0 24px #160d08,0 9px 18px rgba(0,0,0,.3)}
+    .bookshelf-scene:before{content:"مکتبۂ اسلامی";position:absolute;top:7px;left:50%;transform:translateX(-50%);color:#f3d99e;font-size:13px;white-space:nowrap;text-shadow:0 1px 2px #160d08}
     .shelf-top{position:absolute;top:0;left:0;right:0;height:12px;background:linear-gradient(#e0b66c,#7c4e22)}
     .shelf-row{height:67px;display:flex;align-items:flex-end;justify-content:center;gap:5px;padding:0 7px 5px}
     .shelf-row i{display:block;width:7%;height:55px;border-radius:3px 3px 1px 1px;background:linear-gradient(90deg,#173e31,#2b7550 45%,#0c2e25);border:1px solid #c6a15c;box-shadow:2px 0 2px rgba(0,0,0,.35)}
@@ -178,7 +179,7 @@
       width: min(1000px, 92%);
       margin: -1px auto 0;
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
+      grid-template-columns: repeat(3, 1fr);
       gap: 12px;
       transform: translateY(-1px);
     }
@@ -192,6 +193,9 @@
     }
     .stat strong { display: block; color: var(--green); font-size: 25px; line-height: 1.6; }
     .stat span { color: var(--muted); font-size: 13px; }
+    .stat.books-total { background:linear-gradient(145deg,#fffdf7,#f0e6cc); border-top:3px solid var(--gold); }
+    .stat.books-total strong { font-size:30px; }
+    .stat small { display:block; color:#8a7958; font-size:10px; line-height:1.6; }
 
     .section {
       width: min(1160px, 92%);
@@ -310,7 +314,8 @@
     .showcase-copy h2{color:#fff4d7;font-size:clamp(22px,4vw,30px);line-height:1.7;margin:5px 0}
     .showcase-copy p{color:#e5e9df;margin:0 0 14px;font-size:14px}
     .showcase-copy a{display:inline-block;padding:5px 18px;border-radius:30px;background:linear-gradient(110deg,#ead7a5,#c9a45a);color:#173c33;text-decoration:none;font-weight:700}
-    .bookshelf-scene{position:relative;min-height:205px;padding:25px 18px 16px;border:7px solid #9a6c32;border-bottom-width:12px;border-radius:12px;background:linear-gradient(90deg,rgba(27,12,5,.2),transparent 18%,rgba(27,12,5,.18) 82%),#3b2113;box-shadow:inset 0 0 24px #160d08,0 7px 14px rgba(0,0,0,.25)}
+    .bookshelf-scene{position:relative;min-height:235px;padding:31px 18px 16px;border:9px solid #9a6c32;border-bottom-width:15px;border-radius:12px;background:linear-gradient(90deg,rgba(27,12,5,.25),transparent 18%,rgba(27,12,5,.2) 82%),repeating-linear-gradient(90deg,#3b2113 0 28px,#422717 29px 31px);box-shadow:inset 0 0 24px #160d08,0 9px 18px rgba(0,0,0,.3)}
+    .bookshelf-scene:before{content:"مکتبۂ اسلامی";position:absolute;top:7px;left:50%;transform:translateX(-50%);color:#f3d99e;font-size:13px;white-space:nowrap;text-shadow:0 1px 2px #160d08}
     .shelf-top{position:absolute;top:0;left:0;right:0;height:12px;background:linear-gradient(#e0b66c,#7c4e22)}
     .shelf-row{height:67px;display:flex;align-items:flex-end;justify-content:center;gap:5px;padding:0 7px 5px}
     .shelf-row i{display:block;width:7%;height:55px;border-radius:3px 3px 1px 1px;background:linear-gradient(90deg,#173e31,#2b7550 45%,#0c2e25);border:1px solid #c6a15c;box-shadow:2px 0 2px rgba(0,0,0,.35)}
@@ -395,6 +400,7 @@
     </section>
 
     <section class="stats" aria-label="مکتبہ کا تعارف">
+      <div class="stat books-total"><strong id="totalBooks">0</strong><span>کل کتب</span><small>کتابیں شامل ہونے پر تعداد خود بڑھے گی</small></div>
       <div class="stat"><strong>16</strong><span>مستقل علمی شعبے</span></div>
       <div class="stat"><strong>اردو و عربی</strong><span>دو بنیادی زبانیں</span></div>
     </section>
@@ -502,6 +508,9 @@
 
     document.getElementById("searchInput").addEventListener("input", searchCategories);
     document.getElementById("year").textContent = new Date().getFullYear();
+    // کتابوں کی اصل فہرست شامل ہونے پر .book-record عناصر خود شمار ہوں گے۔
+    const bookRecords = document.querySelectorAll(".book-record");
+    document.getElementById("totalBooks").textContent = bookRecords.length.toLocaleString("ur-PK");
   </script>
 </body>
 </html>
